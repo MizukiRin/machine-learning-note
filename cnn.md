@@ -64,12 +64,14 @@ $a^{k}=\sum^{11}_{i=1}\sum^{11}_{j=1} a_{ij}^{k}$
 -   CONSIDER OUTPUT
     -   Each output correspond to a digit. Assume we pick a one dimension of output call $y^{i}$. Then we find a image x let the output maximize. $x^{*} = arg\space max_{x}\space y^{i}$
     -   The result is strange. It doesn't look like a digit. But if we put these image into the machine , it will still tell us the correct answer.
+    
     ![](./images/cnn/1.png)
     -   So, whether we have a way to let the image looks like a real digit people write. We can do some constraint to $x$. Change the formua to $x^{*} = arg\space max_{x}\space (y^{i}-\sum_{I,j}|x_{i,j}|)$. 
         -   We over all pixel values(L1 regularization)
         -   So the formula mean, we should let the summantion of $x_{i,j}$ smaller the better while maximize the $y^{i}$. That is we hope the image we find with less ink (white area).
         -   And after adding the constraint, we get:
           ![](./images/cnn/2.png)
+	  
           It looks better.
 
 ## SOME METHODS
@@ -99,6 +101,7 @@ $a^{k}=\sum^{11}_{i=1}\sum^{11}_{j=1} a_{ij}^{k}$
 -   filter的高和每个word的vector一样长，也就是embedding dimension
 -   filter的移动方向只在时间方向上移动
 -   在embedding上所有dimension上是independent的，所以filter在embedding方向上移动是不会make sense的
+
 ![](./images/cnn/3.png)
 
 **但是，不是所有的机器学习相关都可以用CNN， 首先它要能有适合CNN的特性。就比如棋盘，我们是可以把他当作image来看的，所以我们可以用CNN， 但它又不满足property3， 所有我们在设计CNN的时候，我们没有使用max pooling**

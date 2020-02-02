@@ -64,7 +64,7 @@ $a^{k}=\sum^{11}_{i=1}\sum^{11}_{j=1} a_{ij}^{k}$
 -   CONSIDER OUTPUT
     -   Each output correspond to a digit. Assume we pick a one dimension of output call $y^{i}$. Then we find a image x let the output maximize. $x^{*} = arg\space max_{x}\space y^{i}$
     -   The result is strange. It doesn't look like a digit. But if we put these image into the machine , it will still tell us the correct answer.
-    ![](.\images\cnn\1.png)
+    ![](images\cnn\1.png)
     -   So, whether we have a way to let the image looks like a real digit people write. We can do some constraint to $x$. Change the formua to $x^{*} = arg\space max_{x}\space (y^{i}-\sum_{I,j}|x_{i,j}|)$. 
         -   We over all pixel values(L1 regularization)
         -   So the formula mean, we should let the summantion of $x_{i,j}$ smaller the better while maximize the $y^{i}$. That is we hope the image we find with less ink (white area).
